@@ -1,0 +1,33 @@
+def rotate(l, n):
+    return l[-n:] + l[:-n]
+More conventional direction:
+
+def rotate(l, n):
+    return l[n:] + l[:n]
+Example:
+
+example_list = [1, 2, 3, 4, 5]
+
+rotate(example_list, 2)
+# [3, 4, 5, 1, 2]
+The arguments to rotate are a list and an integer denoting the shift. 
+The function creates two new lists using slicing and returns the concatenatenation of these lists. 
+The rotate function does not modify the input list.
+##########################################################################################################
+
+/*Function to left rotate arr[] of size n by d*/
+void leftRotate(int arr[], int d, int n)
+{
+  int i;
+  for (i = 0; i < d; i++)
+    leftRotatebyOne(arr, n);
+}
+ 
+void leftRotatebyOne(int arr[], int n)
+{
+  int i, temp;
+  temp = arr[0];
+  for (i = 0; i < n-1; i++)
+     arr[i] = arr[i+1];
+  arr[i] = temp;
+}
